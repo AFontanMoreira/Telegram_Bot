@@ -34,7 +34,15 @@ fun main(args: Array<String>) {
                     parseMode = ParseMode.MARKDOWN
                 )
             }
+            /**
+             * Comando /saludo
+             *
+             * Javi te saluda renegando su apodo
+             */
 
+            command("saludo"){
+                val respuestaSaludo = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Hey soy Javi, aun que a veces me llamen Cristian, nos vemos en clase")
+            }
 
         }
 
