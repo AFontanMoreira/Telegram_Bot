@@ -51,7 +51,8 @@ fun main(args: Array<String>) {
              */
 
             command("desaparecer"){
-                val respuesta_saludo2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.tenor.com/images/83da5b25bd710dda7ce487ee322895c1/tenor.gif" )
+                val respuestaDesaparecer = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Espera que hago en clase, Me largooooo!!!!")
+                val respuestaDesaparecer2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.tenor.com/images/83da5b25bd710dda7ce487ee322895c1/tenor.gif" )
             }
 
         }
