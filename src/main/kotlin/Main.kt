@@ -44,6 +44,16 @@ fun main(args: Array<String>) {
                 val respuestaSaludo = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Hey soy Javi, aun que a veces me llamen Cristian, nos vemos en clase")
             }
 
+            /**
+             * Comando /desaparecer
+             *
+             * Javi desaparece de clase
+             */
+
+            command("desaparecer"){
+                val respuesta_saludo2 = bot.sendAnimation(chatId = ChatId.fromId(update.message!!.chat.id), "https://media.tenor.com/images/83da5b25bd710dda7ce487ee322895c1/tenor.gif" )
+            }
+
         }
 
     }
