@@ -1,14 +1,20 @@
 import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
 import com.github.kotlintelegrambot.dispatcher.command
-import com.github.kotlintelegrambot.dispatcher.text
 import com.github.kotlintelegrambot.entities.ChatId
 import com.github.kotlintelegrambot.entities.ParseMode
-import com.sun.xml.internal.fastinfoset.util.StringArray
 
 
-fun main(args: Array<String>) {
+
+fun main() {
     println("hola mundo")
+
+    val excusa1 = "Lo siento me encuentro mal hoy, no voy a poder ir a clase"
+    val excusa2 = "Me duele la cabeza, no voy a poder ir a clase"
+    val excusa3 = "Oh, pensaba que hoy les tocaba al otro crupo"
+    val excusa4 = "Nah sin mas no me apetecia ir"
+    val excusa5 = "Me duele el dedo meñique del pie"
+    val excusas = arrayOf<String>(excusa1,excusa2,excusa3,excusa4,excusa5)
 
 
 
@@ -29,7 +35,7 @@ fun main(args: Array<String>) {
                     */saludo* | Javi se presenta
                     */justificante* | Envia justificante
                     */desaparecer* | Javi desaparece de clase
-                    */excusa* | Genera una escusa para un nuevo dia
+                    */excusa* | Genera una excusa para un nuevo dia
                     """.trimIndent()
                 bot.sendMessage(
                     chatId = ChatId.fromId(message.chat.id),
@@ -67,6 +73,19 @@ fun main(args: Array<String>) {
             command("justificante"){
                 val respuestaJustificante = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = "Aqui tiene su justificante para poder faltar hoy. Imprimalo las veces que lo necesite.")
                 val respuestaJustificante2 = bot.sendPhoto(chatId = ChatId.fromId(update.message!!.chat.id), "https://loentiendo.com/wp-content/uploads/2015/11/nuevo-sistema-bajas-medicas.jpg")
+            }
+
+            /**
+             * Comando /excusa
+             *
+             * genera una excusa aleatoria
+             */
+
+            command("excusa"){
+
+                val nRandom = (0..4).random()
+                val respuestaExcusa = bot.sendMessage(chatId = ChatId.fromId(update.message!!.chat.id), text = excusas[nRandom])
+
             }
 
         }
