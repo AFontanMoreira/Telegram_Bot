@@ -4,7 +4,13 @@ import com.github.kotlintelegrambot.dispatcher.command
 import com.github.kotlintelegrambot.entities.ChatId
 import com.github.kotlintelegrambot.entities.ParseMode
 
-
+/**
+* EL Bicho es un Bot de Telegram creado en Kotlin
+* Para su funcionamiento se ha usado la librería:
+* https://github.com/kotlin-telegram-bot/kotlin-telegram-bot
+* @version 1.0, 01/06/21
+* @author Alexander Fontán
+*/
 
 fun main() {
     println("hola mundo")
